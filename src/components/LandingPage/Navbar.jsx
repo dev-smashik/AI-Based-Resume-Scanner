@@ -2,18 +2,18 @@ import React, { useState } from 'react'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { motion } from "framer-motion";
 import { fadeIn} from "../../utils/motion";
+// import { href, Link } from 'react-router-dom'; 
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('#home')
 
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#upload", label: "Upload Resume" },
-    { href: "#jobs", label: "Search Jobs" },
-    { href: "#about", label: "About Us" },
-  ]
-
+    { href: "/", label: "Home" },
+    { href: "/uploadresume", label: "Upload Resume" },
+    { href: "/jobs", label: "Search Jobs" },
+    { href: "/about", label: "About Us" },
+  ];
   return (
     <motion.nav 
       variants={fadeIn('down', 0.2)}

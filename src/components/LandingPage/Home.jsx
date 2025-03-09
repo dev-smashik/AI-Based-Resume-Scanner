@@ -11,6 +11,7 @@ import ServicesSection from './ServicesSection'
 import TestimonialSection from './TestimonialSection'
 import NewsLetterSection from './NewsLetterSection'
 import Footer from './Footer'
+// import UploadResume from '../UploadResume/UploadResume';
 
 
 
