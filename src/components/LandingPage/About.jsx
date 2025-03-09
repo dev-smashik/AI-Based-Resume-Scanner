@@ -1,45 +1,59 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import handDrawnResumeTemplate1 from "../assets/cv.png";
 import CheckmarkCircle from "../assets/checkmark.svg";
 
 const About = () => {
+  const sectionRef = useRef(null);
+
+  // This ensures the section is properly registered for scroll behavior
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (section) {
+      // Force a layout recalculation to ensure the section is properly registered
+      section.offsetHeight;
+    }
+  }, []);
+
   return (
-    <div className="inline-flex items-center gap-[108px] relative">
+    <section 
+      id="about" 
+      ref={sectionRef}
+      className="py-20 pt-28 flex flex-col md:flex-row items-center gap-8 md:gap-[108px] relative scroll-mt-20"
+    >
       <img
-        className="relative w-[660px] h-[660px] mt-[-26.00px] mb-[-34.00px] ml-[-30.00px] object-cover"
+        className="relative w-full md:w-[660px] h-auto md:h-[660px] object-cover"
         alt="Hand drawn resume"
         src={handDrawnResumeTemplate1}
       />
 
-      <div className="relative w-[681px] h-[302px] mr-[-2.00px]">
-        <p className="absolute w-[679px] h-[174px] top-0 left-0 [font-family:'Poppins-SemiBold',Helvetica] font-semibold text-[#444750] text-5xl tracking-[0] leading-[57.6px]">
+      <div className="relative w-full md:w-[681px]">
+        <h2 className="font-['Poppins-SemiBold',Helvetica] font-semibold text-[#444750] text-3xl md:text-5xl tracking-[0] leading-tight mb-10">
           Make sure your resume stands out for the right reasons!
-        </p>
+        </h2>
 
-        <div className="top-[206px] inline-flex items-center gap-2.5 absolute left-0">
-        <CheckmarkCircle className="!relative !w-5 !h-5" color="#3C50E0" />
-          <p className="relative w-fit mt-[-1.00px] font-body-medium-regular font-[number:var(--body-medium-regular-font-weight)] text-primary-text-color text-[length:var(--body-medium-regular-font-size)] tracking-[var(--body-medium-regular-letter-spacing)] leading-[var(--body-medium-regular-line-height)] whitespace-nowrap [font-style:var(--body-medium-regular-font-style)]">
+        <div className="flex items-center gap-2.5 mb-4">
+          <CheckmarkCircle className="w-5 h-5" color="#3C50E0" />
+          <p className="font-medium text-primary-text-color">
             Eliminate embarrassing mistakes and typos
           </p>
         </div>
 
-        <div className="top-[242px] inline-flex items-center gap-2.5 absolute left-0">
-          <CheckmarkCircle className="!relative !w-5 !h-5" color="#3C50E0" />
-          <p className="relative w-fit mt-[-1.00px] font-body-medium-regular font-[number:var(--body-medium-regular-font-weight)] text-primary-text-color text-[length:var(--body-medium-regular-font-size)] tracking-[var(--body-medium-regular-letter-spacing)] leading-[var(--body-medium-regular-line-height)] whitespace-nowrap [font-style:var(--body-medium-regular-font-style)]">
+        <div className="flex items-center gap-2.5 mb-4">
+          <CheckmarkCircle className="w-5 h-5" color="#3C50E0" />
+          <p className="font-medium text-primary-text-color">
             Sell yourself effectively by strengthening your content
           </p>
         </div>
 
-
-        <div className="top-[278px] inline-flex items-center gap-2.5 absolute left-0">
-          <CheckmarkCircle className="!relative !w-5 !h-5" color="#3C50E0" />
-          <p className="relative w-fit mt-[-1.00px] font-body-medium-regular font-[number:var(--body-medium-regular-font-weight)] text-primary-text-color text-[length:var(--body-medium-regular-font-size)] tracking-[var(--body-medium-regular-letter-spacing)] leading-[var(--body-medium-regular-line-height)] whitespace-nowrap [font-style:var(--body-medium-regular-font-style)]">
+        <div className="flex items-center gap-2.5">
+          <CheckmarkCircle className="w-5 h-5" color="#3C50E0" />
+          <p className="font-medium text-primary-text-color">
             Improve your design and create a visually appealing resume
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default About; 
+export default About;

@@ -26,7 +26,7 @@ const features = [
 ];
 
   return (
-    <section id="about" className="w-full bg-gray-50 py-16 px-4 md:px-8">
+    <div className="w-full bg-gray-50 py-16 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           variants={fadeIn('right', 0.2)}
@@ -84,7 +84,7 @@ const features = [
           </motion.div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 };
 
