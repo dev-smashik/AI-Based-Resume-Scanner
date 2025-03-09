@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import '../App.css'
+import "/src/App.css";
 import Hero from './hero'
 import Navbar from './Navbar'
 import CompanyLogo from './CompanyLogo'

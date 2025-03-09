@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn, textVariant } from "../../utils/motion";
 import 'swiper/css';
 import 'swiper/css/navigation';
-import monitorCardBg from '../assets/monitor-card.webp';
+import monitorCardBg from "../../assets/monitor-card.webp";
 
 const MonitorSection = () => {
   return (

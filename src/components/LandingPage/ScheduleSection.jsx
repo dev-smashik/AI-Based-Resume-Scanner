@@ -1,6 +1,6 @@
-import scheduleImage from '../assets/cv.png';
+import scheduleImage from "../../assets/cv.png";
 import { motion } from "framer-motion";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn, textVariant } from "../../utils/motion";
 
 const ScheduleSection = () => {
   return (
