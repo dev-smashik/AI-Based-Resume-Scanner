@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../../utils/motion";
-import heroImage from "../../assets/CoverRight.svg";
 import heroImage2 from "../../assets/CoverLeftBG.svg";
+import CompanyLogo from '../../assets/companylogo1.svg'; 
+
 
 const UploadResume = () => {
   const [files, setFiles] = useState([]);
@@ -45,47 +46,62 @@ const UploadResume = () => {
       {/* Left Column */}
       <div className="w-full md:w-1/2 space-y-8">
         <motion.div variants={fadeIn('right', 0.2)} initial="hidden" whileInView="show">
-          {/* Star badge */}
-                <div className="flex items-center gap-2 bg-gray-50 w-fit px-4 py-2 rounded-full hover:bg-gray-100 transition-colors cursor-pointer group">
-                <span className="text-blue-600 group-hover:scale-110 transition-transform">★</span>
-                <span className="text-sm font-medium">Resume Checker</span>
-                </div>
-              </motion.div>
+                  <div className="flex items-center gap-2 bg-gray-50 w-fit px-4 py-2 rounded-full hover:bg-gray-100 transition-colors cursor-pointer group">
+                  <span className="text-blue-600 group-hover:scale-110 transition-transform">★</span>
+                  <span className="text-sm font-medium">Resume Checker</span>
+                  </div>
+                  </motion.div>
 
-              <motion.h1 
-                variants={textVariant(0.3)}
-                initial="hidden"
-                whileInView="show"
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
-              >
-                Is Your{' '}
-                <span className="text-blue-600 relative inline-block">
-                Resume
-                </span>{' '}
-                Good Enough?
-                <span className="inline-block ml-2 animate-pulse">📝</span>
-              </motion.h1>
+                  <motion.h1 
+                  variants={textVariant(0.3)}
+                  initial="hidden"
+                  whileInView="show"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                  >
+                  Is Your{' '}
+                  <span className="text-blue-600 relative inline-block">
+                  Resume
+                  </span>{' '}
+                  Good Enough?
+                  <span className="inline-block ml-2 animate-pulse">📝</span>
+                  </motion.h1>
 
-              <motion.p 
-                variants={fadeIn('up', 0.4)}
-                initial="hidden"
-                whileInView="show"
-                className="text-gray-600 text-lg md:text-xl max-w-xl"
-              >
-                A free and fast AI resume checker doing 16 crucial checks to ensure your resume is ready to perform and get you interview callbacks.
-              </motion.p>
+                  <motion.p 
+                  variants={fadeIn('up', 0.4)}
+                  initial="hidden"
+                  whileInView="show"
+                  className="text-gray-600 text-lg md:text-xl max-w-xl"
+                  >
+                  A free and fast AI resume checker doing 16 crucial checks to ensure your resume is ready to perform and get you interview callbacks.
 
-              <motion.button
-                variants={fadeIn('up', 0.5)}
-                initial="hidden"
-                whileInView="show"
-                className="mt-6 bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
-              >
-                <span>Download Our App</span>
-              </motion.button>
-              </div>
+                  </motion.p>
 
-              {/* Right Column - Upload Section */}
+                  <motion.button
+                  variants={fadeIn('up', 0.5)}
+                  initial="hidden"
+                  whileInView="show"
+                  className="mt-6 bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
+                  >
+                  <span>Download Our App</span>
+                  </motion.button>
+
+                  <motion.div
+                  variants={fadeIn('up', 0.6)}
+                  initial="hidden"
+                  whileInView="show"
+                  className="mt-8"
+                  >
+                  <p className="text-gray-600 mb-4">Some Of Our Clients</p>
+                  <img 
+                    src={CompanyLogo} 
+                    alt="Company Logo" 
+                    className="w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px] h-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+                  />
+                  </motion.div>
+
+                  </div>
+
+                  {/* Right Column - Upload Section */}
         <motion.div 
           variants={fadeIn('left', 0.5)}
           initial="hidden"
@@ -95,18 +111,13 @@ const UploadResume = () => {
           <div className="bg-white p-6 rounded-xl shadow-lg">
             {/* File Upload Section */}
             <div className="mb-6">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label className="block text-gray-700 text-lg font-bold mb-2">
             Upload Resume
           </label>
           <p className="text-sm text-gray-600 mb-2">
             Add your documents here, and you can upload up to 5 files max
           </p>
-          <p className="text-xs text-amber-600 mb-2">
-            Only support .pdf, .jpg and zip files
-          </p>
-          <p className="text-xs text-gray-500 mb-4 flex items-center">
-            <span className="mr-1">🔒</span> Privacy guaranteed
-          </p>
+          
           <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-500 transition-colors">
             <input
               type="file"
@@ -123,6 +134,9 @@ const UploadResume = () => {
               </div>
             </label>
           </div>
+          <p className="text-xs text-amber-600 mb-2 items-center flex justify-center py-2">
+            Only support .pdf, .jpg and zip files
+          </p>
             </div>
 
           {/* URL Input */}
@@ -193,6 +207,9 @@ const UploadResume = () => {
           >
             {uploading ? 'Uploading...' : 'Upload Files'}
           </button>
+          <p className="text-sm text-gray-500 mb-4 flex items-center justify-center py-4">
+            <span className="mr-1">🔒</span> Privacy guaranteed
+          </p>
         </div>
       </motion.div>
     </section>
